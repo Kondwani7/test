@@ -9,7 +9,7 @@ const FullAccess = () => {
         async function getKeys(){
             let keysArr = await window.account.getAccessKeys()
             let counter=0;
-            let OutputArr = keysArr.map((x,index) => {
+            let OutputArr = keysArr.map((x) => {
                 if(x.access_key.permission==="FullAccess"){
                     counter += 1;
                     return (

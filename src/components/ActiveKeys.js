@@ -1,6 +1,7 @@
 import React from 'react'
 import  {Container, Row} from 'react-bootstrap';
 import FullAccess from './ActiveKeySub/FullAccess';
+import FunctionCall from './ActiveKeySub/FunctionCall';
 const ActiveKeys = () => {
   return (
     <div>
@@ -9,7 +10,7 @@ const ActiveKeys = () => {
                 <FullAccess/>
             </Row>
             <Row className='d-flex justify-content-center'>
-                Function call access
+                <FunctionCall/>
             </Row>
         </Container>
     </div>
