@@ -20,7 +20,7 @@ const SendToken = (props) => {
         //if the amount requested is less than our balance, send to the target recipient
         await window.account.sendMoney(Recipient.current.value, window.utils.format.parseNearAmount(enteredValue))
         .then(
-          await window.contract.addFunds({recipient:Recipient.current.value, amount: Number(enteredValue)})
+          await window.contract.addFunds({recipient:Recipient.current.value, amount:Number(enteredValue)})
         ).then(
           setRecipients(
             await window.contract.getNames({User:window.accountId})
@@ -40,7 +40,7 @@ const SendToken = (props) => {
         let Data = await window.account.state()
         setBalance(Data.amount)
       }
-      getData()
+      getData();
     }, [balance])
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const SendToken = (props) => {
         )
         //amount
         setValuesSent(
-          await window.contract.getTotals({User: window.accountId})
+          await window.contract.getValues({User: window.accountId})
         )
       }
       getTransaction()
@@ -77,7 +77,7 @@ const SendToken = (props) => {
         <Card>
           <Card.Header>Near Token balance</Card.Header>
           <ListGroup variant="flush">
-            <ListGroup.Item>Near Tokens</ListGroup.Item>
+            <ListGroup.Item>{formatOutput(window.utils.format.formatNearAmount(String(balance)))} NEAR</ListGroup.Item>
           </ListGroup>
         </Card>
       </Row>
@@ -96,9 +96,8 @@ const SendToken = (props) => {
                   <Button onClick={sendGift}>Submit</Button>
                 </Col>
               </Row>
-              <br></br>
-              <Row  styles={{marginTop:"10%"}} className='d-flex justify-content-center'>
-                <Table  striped bordered hover variant='dark'>
+              <Row   className='d-flex justify-content-center'>
+                <Table style={{marginTop:"10%"}}  striped bordered hover variant='dark'>
                   <thead>
                     <tr>
                       <th colSpan="2">Transaction History</th>
@@ -110,7 +109,7 @@ const SendToken = (props) => {
                         return (
                           <tr key={x}>
                             <td>{x}</td>
-                            <td>{`${valuesSent[index]} Near`}</td>
+                            <td>{`${valuesSent[index]} NEAR`}</td>
                           </tr>
                         )
                       })

@@ -46,7 +46,7 @@ export default function App() {
       <Card.Body>
         <Card.Title>Please Login</Card.Title>
         <Card.Text>
-          This Application will not work. Sorry!
+          This Application will not work unless you <b>Login</b>. Sorry!
         </Card.Text>
         <Button onClick={login}>Login Now</Button>
       </Card.Body>
