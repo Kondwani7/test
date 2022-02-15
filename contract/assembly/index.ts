@@ -39,4 +39,19 @@ export function addFunds(recipient: string, amount: i32):void{
     }
 }
 
-//function to display recipient data on the new component
+//function to display recipient transaction data
+export function getNames(User:string):string[]{
+    if(recipientList.contains(User)){
+        return recipientList.getSome(User)
+    } else{
+        return []
+    }
+}
+
+export function getValues(User:string):i32[]{
+    if(totalSent.contains(User)){
+        return totalSent.getSome(User)
+    } else{
+        return []
+    }
+}

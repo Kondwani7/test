@@ -6,6 +6,7 @@ import './scss/Appstyles.scss';
 import getConfig from './config'
 import { Navbar, Button, Container, Nav,Row, Col,Card } from 'react-bootstrap';
 import Metadata from './components/Metadata';
+import SendToken from './components/SendToken';
 
 
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
@@ -22,7 +23,7 @@ export default function App() {
           </Nav>
           <Nav.Link>
           <Button variant="primary" onClick={(window.accountId==='')?login:logout}>
-            {(window.accountId==='')?login:window.accountId}
+            {(window.accountId==='')?login:window.accountId} = username
           </Button>
           </Nav.Link>
         </Navbar.Collapse>
@@ -35,7 +36,9 @@ export default function App() {
         <Row className="d-flex justify-content-center">
           <Metadata/>
         </Row>
-        <Row className="d-flex justify-content-center">Send Token Out</Row>
+        <Row className="d-flex justify-content-center">
+          <SendToken/>
+        </Row>
         <Row className="d-flex justify-content-center">Active Keys</Row>
       </Container>
     :<Card>
