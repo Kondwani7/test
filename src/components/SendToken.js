@@ -97,7 +97,7 @@ const SendToken = (props) => {
                 </Col>
               </Row>
               <Row   className='d-flex justify-content-center'>
-                <Table style={{marginTop:"10%"}}  striped bordered hover variant='dark'>
+                <Table style={{marginTop:"10%"}}  striped bordered hover variant='primary'>
                   <thead>
                     <tr>
                       <th colSpan="2">Transaction History</th>

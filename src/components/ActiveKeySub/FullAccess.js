@@ -27,7 +27,7 @@ const FullAccess = () => {
         getKeys()
     }, [])
   return (
-    <Table  striped bordered hover variant='dark'>
+    <Table style={{marginTop:"5%"}} striped bordered hover variant='primary'>
         <thead>
             <tr>
                 <th colSpan="2">Full Access Key Pairs</th>

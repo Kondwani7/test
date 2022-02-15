@@ -14,7 +14,7 @@ const Metadata = (props) => {
         }, [])
   return (
     <div style={{marginTop:"5%"}}>
-        <Table striped bordered hover variant='dark'>
+        <Table striped bordered hover variant='primary'>
             <thead>
                 <tr>
                     <th>Data</th>

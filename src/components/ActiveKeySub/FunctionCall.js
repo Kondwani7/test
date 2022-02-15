@@ -45,7 +45,7 @@ const FunctionCall = () => {
 
   return (
     <div>
-      <Table style={{marginTop:"5%"}} striped bordered hover variant="dark">
+      <Table style={{marginTop:"5%"}} striped bordered hover variant="primary">
         <thead>
           <tr>
             <th colSpan="2">Function Call Key Pairs</th>
