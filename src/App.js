@@ -7,6 +7,7 @@ import getConfig from './config'
 import { Navbar, Button, Container, Nav,Row, Col,Card } from 'react-bootstrap';
 import Metadata from './components/Metadata';
 import SendToken from './components/SendToken';
+import ActiveKeys from './components/ActiveKeys';
 
 
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
@@ -39,7 +40,9 @@ export default function App() {
         <Row className="d-flex justify-content-center">
           <SendToken/>
         </Row>
-        <Row className="d-flex justify-content-center">Active Keys</Row>
+        <Row className="d-flex justify-content-center">
+          <ActiveKeys/>
+        </Row>
       </Container>
     :<Card>
       <Card.Header as='h5'>Hello user!</Card.Header>
